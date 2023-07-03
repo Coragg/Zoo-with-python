@@ -1,3 +1,4 @@
+import options as application
 import files
 import os
 
@@ -34,7 +35,7 @@ def menu(options: int, data: list):
     elif options == 7:
         pass
     elif options == 8:
-        pass
+        application.add_animal_for_name(data)
     elif options == 9:
         close_program()
     else:

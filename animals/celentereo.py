@@ -1,4 +1,4 @@
-import animal
+from animals import animal
 
 class Celentereo(animal.Animal):
     def __init__(self):

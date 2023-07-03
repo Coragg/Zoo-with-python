@@ -1,4 +1,4 @@
-import animal
+from animals import animal
 
 class Mamifero(animal.Animal):
     

@@ -1,4 +1,4 @@
-import animal
+from animals import animal
 
 
 class Gusano(animal.Animal):
