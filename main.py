@@ -1,3 +1,4 @@
+import files
 import os
 
 
@@ -12,7 +13,7 @@ def option_not_allowed():
     print("Recuerde digitar entre [1-9].")
 
 
-def menu(options: int):
+def menu(options: int, data: list):
     if options == 1:
         pass
     elif options == 2:
@@ -35,7 +36,7 @@ def menu(options: int):
         option_not_allowed()
 
 
-def inputs_to_use_program():
+def input_to_menu():
     try:
         number = int(input("Ingrese una de las opciones validas: "))
         if number > 0:
@@ -47,9 +48,10 @@ def inputs_to_use_program():
 
 
 def main():
+    data = files.read_file_csv("information_animals.csv")
     while True:
-        inputs_to_use_program()
-    
+        option = input_to_menu()
+        menu(option, data)    
 
 if __name__ == '__main__':
     main()
