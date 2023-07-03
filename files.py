@@ -1,14 +1,19 @@
 import os
 
-def send_data_to_file(path_and_name_file: str):
+def send_data_to_file(path_and_name_file: str, name:str, weight: eval, color: str, first_data = False, second_data = False):
     """
     """
     try: 
         with open(path_and_name_file, "a") as file:
-            pass
+            if first_data == False and second_data == False:
+                file.write(f"{name}-{weight}-{color}\n")
+            elif first_data != False and second_data == False:
+                file.write(f"{name}-{weight}-{color}-{first_data}\n")
+            else:
+                file.write(f"{name}-{weight}-{color}-{first_data}-{second_data}\n")
     except:
         os.system("color 4")
-        print(f"Error in the process")
+        print(f"Error in the process to send data in {path_and_name_file}")
 
 
 def read_file_csv(path_file: str):
