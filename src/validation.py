@@ -21,7 +21,7 @@ def search_animal_name(data: list):
     return False
 
 
-def validation_search(data: list):
+def searching_animal(data: list):
     """
     """
     search = False

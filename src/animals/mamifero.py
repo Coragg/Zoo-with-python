@@ -1,5 +1,5 @@
 from src.animals import animal
-from src import  validation
+from src import validation
 from src import files
 
 
