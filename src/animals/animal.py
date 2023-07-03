@@ -12,6 +12,9 @@ class Animal():
     def get_path_file(self):
         return f"./types_animals/{self.kind}.txt"
     
+    def set_addtional_information_animal(self):
+        pass
+
     def send_data_to_file_txt(self):
         pass
 
