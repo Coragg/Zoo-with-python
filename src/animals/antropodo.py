@@ -1,4 +1,5 @@
-from animals import animal
+from src.animals import animal
+from src import files
 
 
 class Antropodo(animal.Animal):

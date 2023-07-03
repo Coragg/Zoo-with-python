@@ -25,8 +25,8 @@ def validation_search(data: list):
     """
     """
     search = False
-    while search == False:
+    while not search:
         search = search_animal_name(data)
-        if search == False:
+        if not search:
             print("El animal no se encuentra en el censo. Por favor, intente de nuevo.")
     return search

@@ -25,6 +25,7 @@ def add_animal_for_name(data: list):
     elif all_data[1] == "Mamifero":
         new_animal = mamifero.Mamifero()
         new_animal.set_basic_data(all_data)
+        new_animal.set_additional_information_animal()
         new_animal.send_data_to_file_txt()
         print(new_animal.name)
     elif all_data[1] == "Molusco":

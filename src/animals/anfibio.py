@@ -1,4 +1,4 @@
-from animals import animal
+from src.animals import animal
 
 
 class Anfibio(animal.Animal):

@@ -1,5 +1,6 @@
 import os
 
+
 def send_data_to_file(path_and_name_file: str, name:str, weight: eval, color: str, first_data = False, second_data = False):
     """
     """
