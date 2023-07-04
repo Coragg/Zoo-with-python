@@ -3,3 +3,5 @@ Perro-4-red-4
 Delfin-50-gray-1
 Leon-45-4-4
 Perro-4-black-4
+Elefante-10000-gray-4
+Hipopotamo-1000-brown-4

@@ -7,8 +7,7 @@ import random
 def class_to_send_data(all_data):
     """we received the data, and with data, we'll know what kind of animal we send the information and what interface to
      use.\n
-    paramm all_data list with three or two index
-    """
+    param all_data list with three or two index """
     new_animal_we_need_is = None
     if all_data[1] == "Anfibio":
         new_animal_we_need_is = anfibio.Anfibio()
@@ -52,7 +51,6 @@ def add_animal_for_name(data_of_animals: list):
     """ ask the name in terminal, search the animal and send the data to a file \n
     param data_of_animals list
     """
-    print('\n')
     all_data = validation.searching_animal_on_csv(data_of_animals)
     class_to_send_data(all_data)
     print('\n')
@@ -64,7 +62,7 @@ def add_random_animal(data: list):
     """
     number_the_new_animal = random.randint(0, 128)
     all_data_the_animal = data[number_the_new_animal]
-    print(f"El animal es: {all_data_the_animal}")
+    print(f"El animal es: {all_data_the_animal[0]}")
     class_to_send_data(all_data_the_animal)
     print('\n')
 
@@ -82,4 +80,40 @@ def show_for_kind():
             print("Ingrese un tipo de animal valido. ")
     path_fila = f"./types_animals/{kind}.txt"
     print("\n")
-    files.read_file_txt(path_fila)
+    files.read_file_txt_and_show(path_fila)
+
+
+def filter_data_by_animal_name(matrix_kind: list, name_to_search: str):
+    """   """
+    leaked_data = []
+    for rows in matrix_kind:
+        if name_to_search == rows[0]:
+            leaked_data.append(rows)
+    return leaked_data
+
+
+def show_all_data_filter(lista_animals: list):
+    for animal_information in lista_animals:
+        data_to_show = ""
+        traversed_indices = 1
+        for columns in animal_information:
+            if traversed_indices < len(animal_information):
+                data_to_show += f'{columns}-'
+            else:
+                data_to_show += f'{columns}'
+            traversed_indices += 1
+        print(data_to_show)
+
+
+def search_all_animal_with_same_name(data: list):
+    """
+    """
+    name_animal_to_search = validation.searching_animal_on_csv(data)
+    path_file = f"./types_animals/{name_animal_to_search[1]}.txt"
+    matrix_of_all_animals = files.read_file_txt_and_have_matrix(path_file)
+    filter_data = filter_data_by_animal_name(matrix_of_all_animals, name_animal_to_search[0])
+    show_all_data_filter(filter_data)
+    print(f"La cantidad de {name_animal_to_search[0].lower()} es {len(filter_data)}.\n")
+
+
+

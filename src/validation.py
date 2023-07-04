@@ -4,7 +4,7 @@ def input_number(message_to_user: str):
     return eval number """
     while True:
         try:
-            number = eval(input(message_to_user))
+            number = float(input(message_to_user))
             if number > 0:
                 return number
         except ValueError:

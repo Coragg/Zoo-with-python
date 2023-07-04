@@ -4,8 +4,7 @@ import os
 
 
 def presentation():
-    """show how we can use the program with these instructions
-    """
+    """show how we can use the program with these instructions"""
     print("Bienvenido a CENSO ZOO\n----------------------\nA continuacion las opciones que ofrecemos:\n\n")
     print("1- Mostrar cantidad por tipo \n2- Mostrar vertebrados e invertebrados\n"
           "3- Porcentaje de vertebrados e invertebrados\n4- Porcentaje de cada tipo o grupo de animales en el Zoo\n"
@@ -14,7 +13,7 @@ def presentation():
 
 
 def close_program():
-    # Close the app and show a notification of the end and one pause.
+    """Close the app and show a notification of the end and one pause."""
     print("Cerrando programa...")
     os.system("cls")
     os.system("pause")
@@ -26,6 +25,7 @@ def option_not_allowed():
 
 
 def menu(options: int, data: list):
+    """call the function that you want to use in the program"""
     if options == 1:
         pass
     elif options == 2:
@@ -37,7 +37,7 @@ def menu(options: int, data: list):
     elif options == 5:
         application.show_for_kind()
     elif options == 6:
-        pass
+        application.search_all_animal_with_same_name(data)
     elif options == 7:
         application.add_random_animal(data)
     elif options == 8:
@@ -49,11 +49,10 @@ def menu(options: int, data: list):
 
 
 def input_to_menu(data: list):
-    """
-
-    """
+    """ ask you one option valid and call the function menu for make that you want to do
+    param data: list of animals """
     try:
-        number = int(input("Ingrese una de las opciones validas: "))
+        number = int(input("Digite su opcion: "))
         if number > 0:
             menu(number, data)    
         else:

@@ -14,6 +14,3 @@ class Equinodermo(animal.Animal):
 
     def send_data_to_file_txt(self):
         files.send_data_to_file(self.get_path_file(), self.name, self.weight, self.color, self.tipo_estrella_erizo)
-
-
-    
