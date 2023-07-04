@@ -84,7 +84,10 @@ def show_for_kind():
 
 
 def filter_data_by_animal_name(matrix_kind: list, name_to_search: str):
-    """   """
+    """filter the animals to search and have a list\n
+    param matrix_kind list\n
+    name_to_search str\n
+    return leaked_data list"""
     leaked_data = []
     for rows in matrix_kind:
         if name_to_search == rows[0]:
@@ -93,8 +96,8 @@ def filter_data_by_animal_name(matrix_kind: list, name_to_search: str):
 
 
 def show_all_data_filter(lista_animals: list):
-    """
-    """
+    """ show all the animals filter\n
+    param lista_animals list     """
     for animal_information in lista_animals:
         data_to_show = ""
         traversed_indices = 1
@@ -108,12 +111,11 @@ def show_all_data_filter(lista_animals: list):
 
 
 def search_all_animal_with_same_name(data: list):
-    """
-    """
+    """ find and count animals \n
+    param data list"""
     name_animal_to_search = validation.searching_animal_on_csv(data)
     path_file = f"./types_animals/{name_animal_to_search[1]}.txt"
     matrix_of_all_animals = files.read_file_txt_and_have_matrix(path_file)
     filter_data = filter_data_by_animal_name(matrix_of_all_animals, name_animal_to_search[0])
     show_all_data_filter(filter_data)
     print(f"La cantidad de {name_animal_to_search[0].lower()} es {len(filter_data)}.\n")
-
