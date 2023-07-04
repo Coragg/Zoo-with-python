@@ -1,4 +1,4 @@
-from . import animal
+from src.animals import animal
 from src import files, validation
 
 

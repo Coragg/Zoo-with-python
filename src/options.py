@@ -1,18 +1,19 @@
-from animals import anfibio, antropodo, ave, celentereo, gusano, mamifero, molusco, pez, porifero, reptil
+from animals import anfibio, artropodo, ave, celentereo, gusano, mamifero, molusco, pez, porifero, reptil, equinodermo
 import validation
 import random
 
 
 def class_to_send_data(all_data):
-    """we received the data, and and with data, we'll know what kind of animal we send the information and what interface to use.\n
+    """we received the data, and with data, we'll know what kind of animal we send the information and what interface to
+     use.\n
     paramm all_data list with three or two index
     """
     new_animal_we_need_is = None
     if all_data[1] == "Anfibio":
         new_animal_we_need_is = anfibio.Anfibio()
 
-    elif all_data[1] == "Antropodo":
-        new_animal_we_need_is = antropodo.Antropodo()
+    elif all_data[1] == "Artropodo":
+        new_animal_we_need_is = artropodo.Artropodo()
 
     elif all_data[1] == "Ave":
         new_animal_we_need_is = ave.Ave()
@@ -37,6 +38,10 @@ def class_to_send_data(all_data):
 
     elif all_data[1] == "Reptil":
         new_animal_we_need_is = reptil.Reptil()
+
+    elif all_data[1] == "Equinodermo":
+        new_animal_we_need_is = equinodermo.Equinodermo()
+
     new_animal_we_need_is.set_basic_data(all_data)
     new_animal_we_need_is.set_additional_information_animal()
     new_animal_we_need_is.send_data_to_file_txt()
@@ -55,4 +60,5 @@ def add_random_animal(data: list):
     """
     number_the_new_animal = random.randint(0, 128)
     all_data_the_animal = data[number_the_new_animal]
+    print(f"El animal es: {all_data_the_animal}")
     class_to_send_data(all_data_the_animal)

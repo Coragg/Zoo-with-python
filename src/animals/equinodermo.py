@@ -2,11 +2,10 @@ from src.animals import animal
 from src import files, validation
 
 
-class Equinoderno(animal.Animal):
-
+class Equinodermo(animal.Animal):
     def __init__(self):
         super().__init__()
-        self.tipo_estrella_erizo = bool
+        self.tipo_estrella_erizo = str
 
     def set_additional_information_animal(self):
         self.weight = validation.input_number("Ingrese el peso del animal: ")

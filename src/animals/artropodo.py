@@ -2,7 +2,7 @@ from src.animals import animal
 from src import files, validation
 
 
-class Antropodo(animal.Animal):
+class Artropodo(animal.Animal):
     def __init__(self):
         super().__init__()
         self.number_of_pairs_of_legs = int
