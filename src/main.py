@@ -35,7 +35,7 @@ def menu(options: int, data: list):
     elif options == 4:
         pass
     elif options == 5:
-        pass
+        application.show_for_kind()
     elif options == 6:
         pass
     elif options == 7:
@@ -49,6 +49,9 @@ def menu(options: int, data: list):
 
 
 def input_to_menu(data: list):
+    """
+
+    """
     try:
         number = int(input("Ingrese una de las opciones validas: "))
         if number > 0:

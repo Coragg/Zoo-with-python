@@ -23,7 +23,8 @@ def search_animal_name(data: list):
 
 
 def searching_animal_on_csv(data: list):
-    """search a name in the matrix, and if the name is not find, the function asks you again for another name in the matrix \n
+    """search a name in the matrix, and if the name is not find, the function asks you again for another name in the
+    matrix \n
     param data list 3xN str\n
     return a list """
     search = False

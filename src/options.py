@@ -1,5 +1,6 @@
 from animals import anfibio, artropodo, ave, celentereo, gusano, mamifero, molusco, pez, porifero, reptil, equinodermo
 import validation
+import files
 import random
 
 
@@ -48,10 +49,13 @@ def class_to_send_data(all_data):
 
 
 def add_animal_for_name(data_of_animals: list):
+    """ ask the name in terminal, search the animal and send the data to a file \n
+    param data_of_animals list
     """
-    """
+    print('\n')
     all_data = validation.searching_animal_on_csv(data_of_animals)
     class_to_send_data(all_data)
+    print('\n')
 
 
 def add_random_animal(data: list):
@@ -62,3 +66,20 @@ def add_random_animal(data: list):
     all_data_the_animal = data[number_the_new_animal]
     print(f"El animal es: {all_data_the_animal}")
     class_to_send_data(all_data_the_animal)
+    print('\n')
+
+
+def show_for_kind():
+    """show you all data of the kind animal.    """
+    kind_animal = ["Anfibio", "Artropodo", "Ave", "Celentereo", "Gusano", "Mamifero", "Molusco", "Pez", "Porifero",
+                   "Reptil",  "Equinodermo"]
+    kind = False
+    while not kind:
+        searching = input("Ingrese el tipo de animal: ").capitalize()
+        if searching in kind_animal:
+            kind = searching
+        else:
+            print("Ingrese un tipo de animal valido. ")
+    path_fila = f"./types_animals/{kind}.txt"
+    print("\n")
+    files.read_file_txt(path_fila)
