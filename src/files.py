@@ -51,7 +51,9 @@ def read_file_csv(the_path_of_file_and_name: str):
 
 
 def read_file_txt_and_have_matrix(the_path_of_file_and_name: str):
-    """    """
+    """ Reading a file txt and return a list with the data of the file. 
+    param path_file: path and name of the file csv
+    return: list with the data of the file csv   """
     try:
         data_file = []
         with open(the_path_of_file_and_name, "r") as file:

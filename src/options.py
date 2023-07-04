@@ -93,6 +93,8 @@ def filter_data_by_animal_name(matrix_kind: list, name_to_search: str):
 
 
 def show_all_data_filter(lista_animals: list):
+    """
+    """
     for animal_information in lista_animals:
         data_to_show = ""
         traversed_indices = 1
@@ -114,6 +116,4 @@ def search_all_animal_with_same_name(data: list):
     filter_data = filter_data_by_animal_name(matrix_of_all_animals, name_animal_to_search[0])
     show_all_data_filter(filter_data)
     print(f"La cantidad de {name_animal_to_search[0].lower()} es {len(filter_data)}.\n")
-
-
 
