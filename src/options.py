@@ -1,11 +1,12 @@
 from animals import anfibio, antropodo, ave, celentereo, gusano, mamifero, molusco, pez, porifero, reptil
 import validation
+import random
 
 
-def add_animal_for_name(data_of_animals: list):
+def class_to_send_data(all_data):
+    """we received the data, and and with data, we'll know what kind of animal we send the information and what interface to use.\n
+    paramm all_data list with three or two index
     """
-    """
-    all_data = validation.searching_animal(data_of_animals)
     new_animal_we_need_is = None
     if all_data[1] == "Anfibio":
         new_animal_we_need_is = anfibio.Anfibio()
@@ -36,10 +37,22 @@ def add_animal_for_name(data_of_animals: list):
 
     elif all_data[1] == "Reptil":
         new_animal_we_need_is = reptil.Reptil()
-
     new_animal_we_need_is.set_basic_data(all_data)
     new_animal_we_need_is.set_additional_information_animal()
     new_animal_we_need_is.send_data_to_file_txt()
 
 
-    
+def add_animal_for_name(data_of_animals: list):
+    """
+    """
+    all_data = validation.searching_animal_on_csv(data_of_animals)
+    class_to_send_data(all_data)
+
+
+def add_random_animal(data: list):
+    """ generate a random animal in the list of animals and send thad animal to one file txt. \n
+    param data list\n
+    """
+    number_the_new_animal = random.randint(0, 128)
+    all_data_the_animal = data[number_the_new_animal]
+    class_to_send_data(all_data_the_animal)

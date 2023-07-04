@@ -16,6 +16,7 @@ class Animal():
         pass
 
     def send_data_to_file_txt(self):
+        """send data to the file txt"""
         pass
 
     def show_all_data(self):

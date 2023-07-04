@@ -4,6 +4,8 @@ import os
 
 
 def presentation():
+    """show how we can use the program with these instructions
+    """
     print("Bienvenido a CENSO ZOO\n----------------------\nA continuacion las opciones que ofrecemos:\n\n")
     print("1- Mostrar cantidad por tipo \n2- Mostrar vertebrados e invertebrados\n"
           "3- Porcentaje de vertebrados e invertebrados\n4- Porcentaje de cada tipo o grupo de animales en el Zoo\n"
@@ -12,6 +14,7 @@ def presentation():
 
 
 def close_program():
+    # Close the app and show a notification of the end and one pause.
     print("Cerrando programa...")
     os.system("cls")
     os.system("pause")
@@ -36,7 +39,7 @@ def menu(options: int, data: list):
     elif options == 6:
         pass
     elif options == 7:
-        pass
+        application.add_random_animal(data)
     elif options == 8:
         application.add_animal_for_name(data)
     elif options == 9:
