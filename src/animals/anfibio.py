@@ -1,5 +1,5 @@
-from src.animals import animal
-from src import validation, files
+from . import animal
+import validation, files
 
 
 class Anfibio(animal.Animal):

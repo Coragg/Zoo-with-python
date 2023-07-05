@@ -1,7 +1,7 @@
 from animals import anfibio, artropodo, ave, celentereo, gusano, mamifero, molusco, pez, porifero, reptil, equinodermo
 import validation
-import files
 import random
+import files
 
 
 def class_to_send_data(all_data):

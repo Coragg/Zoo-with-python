@@ -1,5 +1,5 @@
-from src.animals import animal
-from src import files, validation
+from . import animal
+import files, validation
 
 
 class Equinodermo(animal.Animal):

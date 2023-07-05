@@ -1,6 +1,5 @@
-from src.animals import animal
-from src import validation
-from src import files
+from . import animal
+import validation, files
 
 
 class Mamifero(animal.Animal):
