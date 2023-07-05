@@ -24,7 +24,7 @@ def option_not_allowed():
     print("Recuerde digitar entre [1-9].")
 
 
-def menu(options: int, data: list):
+def menu(options: int, data: list, kind_animal: list):
     """call the function that you want to use in the program"""
     if options == 1:
         pass
@@ -35,7 +35,7 @@ def menu(options: int, data: list):
     elif options == 4:
         pass
     elif options == 5:
-        application.show_for_kind()
+        application.show_for_kind(kind_animal)
     elif options == 6:
         application.search_all_animal_with_same_name(data)
     elif options == 7:
@@ -48,13 +48,13 @@ def menu(options: int, data: list):
         option_not_allowed()
 
 
-def input_to_menu(data: list):
+def input_to_menu(data: list, kind_animal: list):
     """ ask you one option valid and call the function menu for make that you want to do
     param data: list of animals """
     try:
         number = int(input("Digite su opcion: "))
         if number > 0:
-            menu(number, data)    
+            menu(number, data, kind_animal)    
         else:
             option_not_allowed()
     except ValueError:
@@ -63,9 +63,11 @@ def input_to_menu(data: list):
 
 def main():
     data = files.read_file_csv("information_animals.csv")
+    kind_animal = ["Anfibio", "Artropodo", "Ave", "Celentereo", "Gusano", "Mamifero", "Molusco", "Pez", "Porifero",
+                "Reptil",  "Equinodermo"]
     presentation()
     while True:
-        input_to_menu(data)
+        input_to_menu(data, kind_animal)
 
 
 if __name__ == '__main__':

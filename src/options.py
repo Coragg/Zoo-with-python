@@ -67,10 +67,8 @@ def add_random_animal(data: list):
     print('\n')
 
 
-def show_for_kind():
+def show_for_kind(kind_animal: list):
     """show you all data of the kind animal.    """
-    kind_animal = ["Anfibio", "Artropodo", "Ave", "Celentereo", "Gusano", "Mamifero", "Molusco", "Pez", "Porifero",
-                   "Reptil",  "Equinodermo"]
     kind = False
     while not kind:
         searching = input("Ingrese el tipo de animal: ").capitalize()
