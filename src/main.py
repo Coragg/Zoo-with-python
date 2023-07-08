@@ -27,7 +27,7 @@ def option_not_allowed():
 def menu(options: int, data: list, kind_animal: list):
     """call the function that you want to use in the program"""
     if options == 1:
-        pass
+        application.have_count_of_animals(kind_animal)
     elif options == 2:
         pass
     elif options == 3:
@@ -64,7 +64,7 @@ def input_to_menu(data: list, kind_animal: list):
 def main():
     data = files.read_file_csv("information_animals.csv")
     kind_animal = ["Anfibio", "Artropodo", "Ave", "Celentereo", "Gusano", "Mamifero", "Molusco", "Pez", "Porifero",
-                "Reptil",  "Equinodermo"]
+                   "Reptil",  "Equinodermo"]
     presentation()
     while True:
         input_to_menu(data, kind_animal)

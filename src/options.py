@@ -117,3 +117,38 @@ def search_all_animal_with_same_name(data: list):
     filter_data = filter_data_by_animal_name(matrix_of_all_animals, name_animal_to_search[0])
     show_all_data_filter(filter_data)
     print(f"La cantidad de {name_animal_to_search[0].lower()} es {len(filter_data)}.\n")
+
+
+# these functions are for count all animals
+
+def have_count_of_animals(kind: list):
+    """count all animals\n
+    param kind list"""
+    count_all_animals = []
+    for kind_animal in kind:
+        path_file = f"./types_animals/{kind_animal}.txt"
+        matrix_of_all_animals = files.read_file_txt_and_have_matrix(path_file)
+        print(f"La cantidad de {kind_animal.lower()} es {len(matrix_of_all_animals)}.")
+        count_all_animals.append(len(matrix_of_all_animals))
+    print(f"El total es {sum(count_all_animals)}\n.")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -16,9 +16,9 @@ def search_animal_name(data: list):
     param data list 3xN str\n
     return false or a list"""
     name = input("Ingrese el nombre del animal: ").capitalize()
-    for animal in data:
-        if name == animal[0]:
-            return animal
+    for datum in data:
+        if name == datum[0]:
+            return datum
     return False
 
 
