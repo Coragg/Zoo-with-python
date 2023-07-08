@@ -135,20 +135,29 @@ def have_count_of_animals(kind: list):
 
 
 
+# 
+
+def mostrar_invertebrado_vertebrado(kind: list):
+    """show the animals invertebrado and vertebrado\n
+    param kind list"""
+    pass
 
 
 
 
 
+# calculate percentage of animals
+
+def show_percentage_of_each_type_of_animal(kind: list):
+    """calculate the percentage of animals\n
+    param kind list"""
+    pass
 
 
 
 
+# calculate percentage of inv and ver
 
-
-
-
-
-
-
-
+def show_percentage_of_invertebrado_and_vertebrado(kind: list):
+    """ """
+    pass
