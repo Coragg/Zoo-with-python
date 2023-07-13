@@ -5,7 +5,7 @@ import random
 import files
 
 
-def class_to_send_data(all_data):
+def class_to_send_data(all_data: list):
     """we received the data, and with data, we'll know what kind of animal we send the information and what interface to
      use.\n
     param all_data list with three or two index """
@@ -202,7 +202,8 @@ def show_percentage_of_each_type_of_animal(kind: list):
 # calculate percentage of inv and ver
 
 def show_percentage_of_invertebrado_and_vertebrado(kind: list):
-    """ """
+    """ calculate and present the percentage of vertebrate and invertebrate
+    param kind list"""
     number_of_animals = np.sum(capture_amount_of_data(kind))
     vertebrate_list = ["Mamifero", "Pez", "Ave", "Reptil"]
     list_invertebrates = ["Artropodo", "Celentereo", "Gusano", "Molusco", "Porifero", "Equinodermo"]
