@@ -1,4 +1,5 @@
 from animals import anfibio, artropodo, ave, celentereo, gusano, mamifero, molusco, pez, porifero, reptil, equinodermo
+import numpy as np
 import validation
 import random
 import files
@@ -133,31 +134,74 @@ def have_count_of_animals(kind: list):
     print(f"El total es {sum(count_all_animals)}\n.")
 
 
+def show_vertebradores():
+    """Search data of the vertebrados"""
+    print("Mamiferos: ")
+    files.read_file_txt_and_show("./types_animals/Mamifero.txt")
+    print("Aves: ")
+    files.read_file_txt_and_show("./types_animals/Ave.txt")
+    print("Peces: ")
+    files.read_file_txt_and_show("./types_animals/Pez.txt")
+    print("Anfibios:")
+    files.read_file_txt_and_show("./types_animals/Anfibio.txt")
+    print("Reptiles: ")
+    files.read_file_txt_and_show("./types_animals/Reptil.txt")
 
 
-# 
+def show_invertebrados():
+    """Search data of the invertebrados """
+    print("Artropodos: ")
+    files.read_file_txt_and_show("./types_animals/Artropodo.txt")
+    print("Moluscos: ")
+    files.read_file_txt_and_show("./types_animals/Molusco.txt")
+    print("Equinodermos: ")
+    files.read_file_txt_and_show("./types_animals/Equinodermo.txt")
+    print("Gusanos: ")
+    files.read_file_txt_and_show("./types_animals/Gusano.txt")
+    print("Poriferos: ")
+    files.read_file_txt_and_show("./types_animals/Porifero.txt")
+    print("Celenteros: ")
+    files.read_file_txt_and_show("./types_animals/Celentereo.txt")
 
-def mostrar_invertebrado_vertebrado(kind: list):
+
+def mostrar_invertebrado_vertebrado():
     """show the animals invertebrado and vertebrado\n
     param kind list"""
-    pass
-
-
-
+    print("Datos de los vertebrados:")
+    show_vertebradores()
+    print("Datos de los invertebrados:")
+    show_invertebrados()
 
 
 # calculate percentage of animals
 
+def capture_amount_of_data(kind_animals: list):
+    """ count all the data in files
+    param kind_animals list
+    return array
+    """
+    count_animals = []
+    for name_kind in kind_animals:
+        path_file = f"./types_animals/{name_kind}.txt"
+        count_animals.append(len(files.read_file_txt_and_have_matrix(path_file)))
+    return np.array(count_animals)
+
+
 def show_percentage_of_each_type_of_animal(kind: list):
     """calculate the percentage of animals\n
     param kind list"""
-    pass
-
-
+    number_of_animals = capture_amount_of_data(kind)
+    count_of_all_animals = np.sum(number_of_animals)
+    index = 0
+    for name_animal in kind:
+        calculate_percent = (100 * number_of_animals[index]) / count_of_all_animals
+        print(f'El porcentaje de {name_animal.lower()} es {round(calculate_percent, 2)}%')
+        index += 1
 
 
 # calculate percentage of inv and ver
 
 def show_percentage_of_invertebrado_and_vertebrado(kind: list):
     """ """
-    pass
+    number_of_animals = capture_amount_of_data(kind)
+    count_of_all_animals = np.sum(number_of_animals)

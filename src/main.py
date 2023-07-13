@@ -29,7 +29,7 @@ def menu(options: int, data: list, kind_animal: list):
     if options == 1:
         application.have_count_of_animals(kind_animal)
     elif options == 2:
-        application.show_percentage_of_invertebrado_and_vertebrado(kind_animal)
+        application.mostrar_invertebrado_vertebrado()
     elif options == 3:
         application.show_percentage_of_invertebrado_and_vertebrado(kind_animal)
     elif options == 4:
