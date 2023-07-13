@@ -203,5 +203,10 @@ def show_percentage_of_each_type_of_animal(kind: list):
 
 def show_percentage_of_invertebrado_and_vertebrado(kind: list):
     """ """
-    number_of_animals = capture_amount_of_data(kind)
-    count_of_all_animals = np.sum(number_of_animals)
+    number_of_animals = np.sum(capture_amount_of_data(kind))
+    vertebrate_list = ["Mamifero", "Pez", "Ave", "Reptil"]
+    list_invertebrates = ["Artropodo", "Celentereo", "Gusano", "Molusco", "Porifero", "Equinodermo"]
+    amount_of_invertebrates = np.sum(capture_amount_of_data(list_invertebrates))
+    amount_of_vertebrate = np.sum(capture_amount_of_data(vertebrate_list))
+    print(f"El porcentaje de vertebrados es: {round((amount_of_vertebrate * 100) / number_of_animals, 2)}%")
+    print(f"El porcentaje de invertebrados es: {round((amount_of_invertebrates * 100) / number_of_animals)}%")
