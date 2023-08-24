@@ -25,6 +25,7 @@ def option_not_allowed():
 
 
 def menu(options: int, data: list, kind_animal: list):
+    """Aplication of menu"""
     match options:
         case 1:
             application.have_count_of_animals(kind_animal)
