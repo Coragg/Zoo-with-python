@@ -52,7 +52,7 @@ def add_animal_for_name(data_of_animals: list):
     """ ask the name in terminal, search the animal and send the data to a file \n
     param data_of_animals list
     """
-    all_data = validation.searching_animal_on_csv(data_of_animals)
+    all_data = validation.searching_animal_in_the_csv(data_of_animals)
     class_to_send_data(all_data)
     print('\n')
 
@@ -112,7 +112,7 @@ def show_all_data_filter(lista_animals: list):
 def search_all_animal_with_same_name(data: list):
     """ find and count animals \n
     param data list"""
-    name_animal_to_search = validation.searching_animal_on_csv(data)
+    name_animal_to_search = validation.searching_animal_in_the_csv(data)
     path_file = f"./types_animals/{name_animal_to_search[1]}.txt"
     matrix_of_all_animals = files.read_file_txt_and_have_matrix(path_file)
     filter_data = filter_data_by_animal_name(matrix_of_all_animals, name_animal_to_search[0])
