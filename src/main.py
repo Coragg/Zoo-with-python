@@ -25,27 +25,27 @@ def option_not_allowed():
 
 
 def menu(options: int, data: list, kind_animal: list):
-    """call the function that you want to use in the program"""
-    if options == 1:
-        application.have_count_of_animals(kind_animal)
-    elif options == 2:
-        application.mostrar_invertebrado_vertebrado()
-    elif options == 3:
-        application.show_percentage_of_invertebrado_and_vertebrado(kind_animal)
-    elif options == 4:
-        application.show_percentage_of_each_type_of_animal(kind_animal)
-    elif options == 5:
-        application.show_for_kind(kind_animal)
-    elif options == 6:
-        application.search_all_animal_with_same_name(data)
-    elif options == 7:
-        application.add_random_animal(data)
-    elif options == 8:
-        application.add_animal_for_name(data)
-    elif options == 9:
-        close_program()
-    else:
-        option_not_allowed()
+    match options:
+        case 1:
+            application.have_count_of_animals(kind_animal)
+        case 2:
+            application.mostrar_invertebrado_vertebrado()
+        case 3:
+            application.show_percentage_of_invertebrado_and_vertebrado(kind_animal)
+        case 4:
+            application.show_percentage_of_each_type_of_animal(kind_animal)
+        case 5:
+            application.show_for_kind(kind_animal)
+        case 6:
+            application.search_all_animal_with_same_name(data)
+        case 7:
+            application.add_random_animal(data)
+        case 8:
+            application.add_animal_for_name(data)
+        case 9:
+            close_program()
+        case _:
+            option_not_allowed()
 
 
 def input_to_menu(data: list, kind_animal: list):
