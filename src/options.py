@@ -164,7 +164,7 @@ def show_invertebrados():
     files.read_file_txt_and_show("./types_animals/Celentereo.txt")
 
 
-def mostrar_invertebrado_vertebrado():
+def show_invertebrado_and_vertebrado():
     """show the animals invertebrado and vertebrado\n
     param kind list"""
     print("Datos de los vertebrados:")

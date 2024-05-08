@@ -4,7 +4,7 @@ import os
 
 
 def presentation():
-    """show how we can use the program with these instructions"""
+    """instructions of the program for the user"""
     print("Bienvenido a CENSO ZOO\n----------------------\nA continuacion las opciones que ofrecemos:\n\n")
     print("1- Mostrar cantidad por tipo \n2- Mostrar vertebrados e invertebrados\n"
           "3- Porcentaje de vertebrados e invertebrados\n4- Porcentaje de cada tipo o grupo de animales en el Zoo\n"
@@ -30,7 +30,7 @@ def menu(options: int, data: list, kind_animal: list):
         case 1:
             application.have_count_of_animals(kind_animal)
         case 2:
-            application.mostrar_invertebrado_vertebrado()
+            application.show_invertebrado_and_vertebrado()
         case 3:
             application.show_percentage_of_invertebrado_and_vertebrado(kind_animal)
         case 4:
