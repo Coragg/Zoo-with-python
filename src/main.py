@@ -14,9 +14,9 @@ def presentation():
 
 def close_program():
     """Close the app and show a notification of the end and one pause."""
-    os.system("cls")
+    os.system("clear") # for unix systems
     print("Cerrando programa...")
-    os.system("pause")
+    os.system("sleep 0.5")
     exit(0)
 
 
