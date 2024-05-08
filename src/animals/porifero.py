@@ -12,5 +12,5 @@ class Porifero(animal.Animal):
         self.color = input("Ingrese un color: ")
 
     def send_data_to_file_txt(self):
-        files.send_data_to_file(self.get_path_file(), self.name, self.weight, self.color)
+        files.write_new_datum_to_the_file(self.get_path_file(), self.name, self.weight, self.color)
 

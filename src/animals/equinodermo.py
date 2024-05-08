@@ -13,4 +13,4 @@ class Equinodermo(animal.Animal):
         self.tipo_estrella_erizo = input("Ingrese si es tipo estrella o erizo: ")
 
     def send_data_to_file_txt(self):
-        files.send_data_to_file(self.get_path_file(), self.name, self.weight, self.color, self.tipo_estrella_erizo)
+        files.write_new_datum_to_the_file(self.get_path_file(), self.name, self.weight, self.color, self.tipo_estrella_erizo)

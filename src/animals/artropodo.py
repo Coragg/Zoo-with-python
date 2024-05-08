@@ -15,6 +15,6 @@ class Artropodo(animal.Animal):
         self.antenas = input("Tiene antenas o no tiene: ")
 
     def send_data_to_file_txt(self):
-        files.send_data_to_file(self.get_path_file(), self.name, self.weight, self.color, self.number_of_pairs_of_legs)
+        files.write_new_datum_to_the_file(self.get_path_file(), self.name, self.weight, self.color, self.number_of_pairs_of_legs)
 
             

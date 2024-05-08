@@ -13,4 +13,4 @@ class Ave(animal.Animal):
         self.number_of_wings = validation.input_number("Ingrese la cantida de alas: ")
 
     def send_data_to_file_txt(self):
-        files.send_data_to_file(self.get_path_file(), self.name, self.weight, self.color, self.number_of_wings)
+        files.write_new_datum_to_the_file(self.get_path_file(), self.name, self.weight, self.color, self.number_of_wings)

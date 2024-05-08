@@ -14,5 +14,5 @@ class Pez(animal.Animal):
         self.scales = validation.input_number("Numero de escamas: ")
 
     def send_data_to_file_txt(self):
-        files.send_data_to_file(self.get_path_file(), self.name, self.weight, self.color, self.scales)
+        files.write_new_datum_to_the_file(self.get_path_file(), self.name, self.weight, self.color, self.scales)
 

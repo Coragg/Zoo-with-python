@@ -1,8 +1,8 @@
 import os
 
 
-def send_data_to_file(path_and_name_file: str, name: str, weight: eval, color: str, first_datum=None,
-                      second_datum=None):
+def write_new_datum_to_the_file(path_and_name_file: str, name: str, weight: eval, color: str, 
+                                first_datum=None, second_datum=None):
     """ create or add data to a file with the path, name and extension of the file
     param path_and_name_file str
     param name str

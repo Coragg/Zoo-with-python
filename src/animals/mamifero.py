@@ -14,4 +14,4 @@ class Mamifero(animal.Animal):
         self.cantidad_patas = validation.input_number("Ingrese la cantida de patas: ")
 
     def send_data_to_file_txt(self):
-        files.send_data_to_file(self.get_path_file(), self.name, self.weight, self.color, self.cantidad_patas)
+        files.write_new_datum_to_the_file(self.get_path_file(), self.name, self.weight, self.color, self.cantidad_patas)

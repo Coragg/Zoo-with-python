@@ -7,3 +7,4 @@ Elefante-10000-gray-4
 Hipopotamo-1000-brown-4
 Gorila-60.0-black-2.0
 Gorila-4.0-red-4.0
+Perro-15.0-black-9.0

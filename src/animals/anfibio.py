@@ -13,6 +13,6 @@ class Anfibio(animal.Animal):
         self.piel = input("Ingrese el tipo de piel: ")
 
     def send_data_to_file_txt(self):
-        files.send_data_to_file(self.get_path_file(), self.name, self.weight, self.color, self.piel)
+        files.write_new_datum_to_the_file(self.get_path_file(), self.name, self.weight, self.color, self.piel)
 
         
