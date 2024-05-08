@@ -69,12 +69,12 @@ def add_random_animal(data: list):
 
 
 def show_for_kind(kind_animal: list):
-    """show you all data of the kind animal.    """
+    """show you all data of the kind animal."""
     kind = False
     while not kind:
-        searching = input("Ingrese el tipo de animal: ").capitalize()
-        if searching in kind_animal:
-            kind = searching
+        this_type_animal = input("Ingrese el tipo de animal: ").capitalize()
+        if this_type_animal in kind_animal:
+            kind = this_type_animal
         else:
             print("Ingrese un tipo de animal valido. ")
     path_fila = f"./types_animals/{kind}.txt"
