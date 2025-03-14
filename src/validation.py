@@ -1,4 +1,4 @@
-def input_number(message_to_user: str):
+def input_number(message_to_user: str) -> float:
     """ This function validate if the input is a number greater than zero.\n
     param str message_to_user\n
     return eval number """
@@ -11,7 +11,7 @@ def input_number(message_to_user: str):
             print("Recuerde que tiene que digitar un numero.")
 
 
-def search_animal_name(data: list):
+def search_animal_name(data: list) -> list:
     """ search a name in the data on the matrix, the search is doing in the first index.\n
     param data list 3xN str\n
     return false or a list"""
@@ -22,7 +22,7 @@ def search_animal_name(data: list):
     return False
 
 
-def searching_animal_in_the_csv(data: list):
+def searching_animal_in_the_csv(data: list) -> list:
     """search a name in the matrix, and if the name is not find, the function asks you again for another name in the
     matrix \n
     param data list 3xN str\n

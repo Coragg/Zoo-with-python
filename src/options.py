@@ -5,7 +5,7 @@ import random
 import files
 
 
-def class_to_send_data(all_data: list):
+def class_to_send_data(all_data: list) -> None:
     """we received the data, and with data, we'll know what kind of animal we send the information and what interface to
      use.\n
     param all_data list with three or two index """
@@ -48,7 +48,7 @@ def class_to_send_data(all_data: list):
     new_animal_we_need_is.send_data_to_file_txt()
 
 
-def add_animal_for_name(data_of_animals: list):
+def add_animal_for_name(data_of_animals: list) -> list:
     """ ask the name in terminal, search the animal and send the data to a file \n
     param data_of_animals list
     """
@@ -57,7 +57,7 @@ def add_animal_for_name(data_of_animals: list):
     print('\n')
 
 
-def add_random_animal(data: list):
+def add_random_animal(data: list) -> list:
     """ generate a random animal in the list of animals and send thad animal to one file txt. \n
     param data list\n
     """
@@ -68,7 +68,7 @@ def add_random_animal(data: list):
     print('\n')
 
 
-def show_for_kind(kind_animal: list):
+def show_for_kind(kind_animal: list) -> None:
     """show you all data of the kind animal."""
     kind = False
     while not kind:
@@ -82,7 +82,7 @@ def show_for_kind(kind_animal: list):
     files.read_file_txt_and_show(path_fila)
 
 
-def filter_data_by_animal_name(matrix_kind: list, name_to_search: str):
+def filter_data_by_animal_name(matrix_kind: list, name_to_search: str) -> list:
     """filter the animals to search and have a list\n
     param matrix_kind list\n
     name_to_search str\n
@@ -94,7 +94,7 @@ def filter_data_by_animal_name(matrix_kind: list, name_to_search: str):
     return leaked_data
 
 
-def show_all_data_filter(lista_animals: list):
+def show_all_data_filter(lista_animals: list) -> list:
     """ show all the animals filter\n
     param lista_animals list     """
     for animal_information in lista_animals:
@@ -109,7 +109,7 @@ def show_all_data_filter(lista_animals: list):
         print(data_to_show)
 
 
-def search_all_animal_with_same_name(data: list):
+def search_all_animal_with_same_name(data: list) -> list:
     """ find and count animals \n
     param data list"""
     name_animal_to_search = validation.searching_animal_in_the_csv(data)
@@ -122,7 +122,7 @@ def search_all_animal_with_same_name(data: list):
 
 # these functions are for count all animals
 
-def have_count_of_animals(kind: list):
+def have_count_of_animals(kind: list) -> list:
     """count all animals\n
     param kind list"""
     count_all_animals = []
@@ -134,7 +134,7 @@ def have_count_of_animals(kind: list):
     print(f"El total es {sum(count_all_animals)}\n.")
 
 
-def show_vertebradores():
+def show_vertebradores() -> None:
     """Search data of the vertebrados"""
     print("Mamiferos: ")
     files.read_file_txt_and_show("./types_animals/Mamifero.txt")
@@ -148,7 +148,7 @@ def show_vertebradores():
     files.read_file_txt_and_show("./types_animals/Reptil.txt")
 
 
-def show_invertebrados():
+def show_invertebrados() -> None:
     """Search data of the invertebrados """
     print("Artropodos: ")
     files.read_file_txt_and_show("./types_animals/Artropodo.txt")
@@ -164,7 +164,7 @@ def show_invertebrados():
     files.read_file_txt_and_show("./types_animals/Celentereo.txt")
 
 
-def show_invertebrado_and_vertebrado():
+def show_invertebrado_and_vertebrado() -> None:
     """show the animals invertebrado and vertebrado\n
     param kind list"""
     print("Datos de los vertebrados:")
@@ -175,7 +175,7 @@ def show_invertebrado_and_vertebrado():
 
 # calculate percentage of animals
 
-def capture_amount_of_data(kind_animals: list):
+def capture_amount_of_data(kind_animals: list) -> list:
     """ count all the data in files
     param kind_animals list
     return array
@@ -187,7 +187,7 @@ def capture_amount_of_data(kind_animals: list):
     return np.array(count_animals)
 
 
-def show_percentage_of_each_type_of_animal(kind: list):
+def show_percentage_of_each_type_of_animal(kind: list) -> None:
     """calculate the percentage of animals\n
     param kind list"""
     number_of_animals = capture_amount_of_data(kind)
@@ -201,7 +201,7 @@ def show_percentage_of_each_type_of_animal(kind: list):
 
 # calculate percentage of inv and ver
 
-def show_percentage_of_invertebrado_and_vertebrado(kind: list):
+def show_percentage_of_invertebrado_and_vertebrado(kind: list) -> None:
     """ calculate and present the percentage of vertebrate and invertebrate
     param kind list"""
     number_of_animals = np.sum(capture_amount_of_data(kind))

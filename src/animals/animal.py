@@ -1,15 +1,15 @@
 class Animal:
-    def __init__(self):
+    def __init__(self) -> None:
         self.name = str
         self.weight = float
         self.color = str
         self.kind = ""
 
-    def set_basic_data(self, data_animal: list):
+    def set_basic_data(self, data_animal: list) -> None:
         self.name = data_animal[0]
         self.kind = data_animal[1]
 
-    def get_path_file(self):
+    def get_path_file(self) -> str:
         return f"./types_animals/{self.kind}.txt"
     
     def set_additional_information_animal(self):

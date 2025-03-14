@@ -3,7 +3,7 @@ import files
 import os
 
 
-def presentation():
+def presentation() -> None:
     """instructions of the program for the user"""
     print("Bienvenido a CENSO ZOO\n----------------------\nA continuacion las opciones que ofrecemos:\n\n")
     print("1- Mostrar cantidad por tipo \n2- Mostrar vertebrados e invertebrados\n"
@@ -12,7 +12,7 @@ def presentation():
           "7- Agregar informacion Animal aleatorio\n8- Agregar animal y sus caracteristicas\n9- Cerrar programa")
 
 
-def close_program():
+def close_program() -> None:
     """Close the app and show a notification of the end and one pause."""
     os.system("clear") # for unix systems
     print("Cerrando programa...")
@@ -20,11 +20,11 @@ def close_program():
     exit(0)
 
 
-def option_not_allowed():
+def option_not_allowed() -> None:
     print("Recuerde digitar entre [1-9].")
 
 
-def menu(options: int, data: list, kind_animal: list):
+def menu(options: int, data: list, kind_animal: list) -> None:
     """Aplication of menu"""
     match options:
         case 1:
@@ -49,7 +49,7 @@ def menu(options: int, data: list, kind_animal: list):
             option_not_allowed()
 
 
-def input_to_menu(data: list, kind_animal: list):
+def input_to_menu(data: list, kind_animal: list) -> None:
     """ ask you one option valid and call the function menu for make that you want to do
     param data: list of animals """
     try:
@@ -62,7 +62,7 @@ def input_to_menu(data: list, kind_animal: list):
         print("Recuerde que tiene que digitar un numero.")
 
 
-def main():
+def main() -> None:
     data = files.read_file_csv("information_animals.csv")
     kind_animal = ["Anfibio", "Artropodo", "Ave", "Celentereo", "Gusano", "Mamifero", "Molusco", "Pez", "Porifero",
                    "Reptil",  "Equinodermo"]
