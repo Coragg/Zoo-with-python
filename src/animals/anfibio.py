@@ -7,12 +7,12 @@ class Anfibio(animal.Animal):
         super().__init__()
         self.piel = bool
 
-    def set_additional_information_animal(self):
+    def set_additional_information_animal(self) -> None:
         self.weight = validation.input_number("Ingrese el peso del animal: ")
         self.color = input("Ingrese un color: ")
         self.piel = input("Ingrese el tipo de piel: ")
 
-    def send_data_to_file_txt(self):
+    def send_data_to_file_txt(self) -> None:
         files.write_new_datum_to_the_file(self.get_path_file(), self.name, self.weight, self.color, self.piel)
 
         

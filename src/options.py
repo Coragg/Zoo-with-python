@@ -19,6 +19,7 @@ ANIMAL_MAP = {
     "Equinodermo": equinodermo.Equinodermo()
 }
 
+
 def class_to_send_data(all_data: list) -> None:
     """we received the data, and with data, we'll know what kind of animal we send the information and what interface to
      use.\n

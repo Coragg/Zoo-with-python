@@ -1,9 +1,9 @@
 class Animal:
     def __init__(self) -> None:
-        self.name = str
+        self.name: str = ""
         self.weight = float
-        self.color = str
-        self.kind = ""
+        self.color: str = ""
+        self.kind: str = ""
 
     def set_basic_data(self, data_animal: list) -> None:
         self.name = data_animal[0]

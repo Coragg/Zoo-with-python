@@ -7,7 +7,7 @@ class Equinodermo(animal.Animal):
         super().__init__()
         self.tipo_estrella_erizo = str
 
-    def set_additional_information_animal(self):
+    def set_additional_information_animal(self) -> None:
         self.weight = validation.input_number("Ingrese el peso del animal: ")
         self.color = input("Ingrese un color: ")
         self.tipo_estrella_erizo = input("Ingrese si es tipo estrella o erizo: ")

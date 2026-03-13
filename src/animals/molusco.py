@@ -7,11 +7,11 @@ class Molusco(animal.Animal):
         super().__init__()
         self.tipo_estrella_erizo = str
 
-    def set_additional_information_animal(self):
+    def set_additional_information_animal(self) -> None:
         self.weight = validation.input_number("Ingrese el peso del animal: ")
         self.color = input("Ingrese un color: ")
         self.tipo_estrella_erizo = input("Diganos si es erizo o estrella: ")
 
-    def send_data_to_file_txt(self):
+    def send_data_to_file_txt(self) -> None:
         files.write_new_datum_to_the_file(self.get_path_file(), self.name, self.weight, self.color, self.tipo_estrella_erizo)
         
