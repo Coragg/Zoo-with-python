@@ -11,7 +11,7 @@ def input_number(message_to_user: str) -> float:
             print("Recuerde que tiene que digitar un numero.")
 
 
-def search_animal_name(data: list) -> list:
+def search_animal_name(data: list) -> list | bool:
     """ search a name in the data on the matrix, the search is doing in the first index.\n
     param data list 3xN str\n
     return false or a list"""

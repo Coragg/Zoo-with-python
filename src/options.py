@@ -1,54 +1,39 @@
-from animals import anfibio, artropodo, ave, celentereo, gusano, mamifero, molusco, pez, porifero, reptil, equinodermo
+from animals import anfibio, artropodo, ave, celentereo, gusano, mamifero, molusco, pez,   porifero, reptil, equinodermo
 import numpy as np
 import validation
 import random
 import files
 
 
+ANIMAL_MAP = {
+    "Anfibio": anfibio.Anfibio(),
+    "Artropodo": artropodo.Artropodo(),
+    "Ave": ave.Ave(),
+    "Celentereo": celentereo.Celentereo(),
+    "Gusano": gusano.Gusano(),
+    "Mamifero": mamifero.Mamifero(),
+    "Molusco": molusco.Molusco(),
+    "Pez": pez.Pez,
+    "Porifero": porifero.Porifero(),
+    "Reptil": reptil.Reptil(),
+    "Equinodermo": equinodermo.Equinodermo()
+}
+
 def class_to_send_data(all_data: list) -> None:
     """we received the data, and with data, we'll know what kind of animal we send the information and what interface to
      use.\n
     param all_data list with three or two index """
-    new_animal_we_need_is = None
-    if all_data[1] == "Anfibio":
-        new_animal_we_need_is = anfibio.Anfibio()
+    animal_class = ANIMAL_MAP.get(all_data[1])
+    if animal_class is None:
+        raise ValueError(f"Tipo de animal no reconocido: {all_data[1]}")
 
-    elif all_data[1] == "Artropodo":
-        new_animal_we_need_is = artropodo.Artropodo()
-
-    elif all_data[1] == "Ave":
-        new_animal_we_need_is = ave.Ave()
-
-    elif all_data[1] == "Celentereo":
-        new_animal_we_need_is = celentereo.Celentereo()
-
-    elif all_data[1] == "Gusano":
-        new_animal_we_need_is = gusano.Gusano()
-
-    elif all_data[1] == "Mamifero":
-        new_animal_we_need_is = mamifero.Mamifero()
-
-    elif all_data[1] == "Molusco":
-        new_animal_we_need_is = molusco.Molusco()
-
-    elif all_data[1] == "Pez":
-        new_animal_we_need_is = pez.Pez()
-
-    elif all_data[1] == "Porifero":
-        new_animal_we_need_is = porifero.Porifero()
-
-    elif all_data[1] == "Reptil":
-        new_animal_we_need_is = reptil.Reptil()
-
-    elif all_data[1] == "Equinodermo":
-        new_animal_we_need_is = equinodermo.Equinodermo()
-
-    new_animal_we_need_is.set_basic_data(all_data)
-    new_animal_we_need_is.set_additional_information_animal()
-    new_animal_we_need_is.send_data_to_file_txt()
+    animal = animal_class()
+    animal.set_basic_data(all_data)
+    animal.set_additional_information_animal()
+    animal.send_data_to_file_txt()
 
 
-def add_animal_for_name(data_of_animals: list) -> list:
+def add_animal_for_name(data_of_animals: list) -> None:
     """ ask the name in terminal, search the animal and send the data to a file \n
     param data_of_animals list
     """
@@ -57,7 +42,7 @@ def add_animal_for_name(data_of_animals: list) -> list:
     print('\n')
 
 
-def add_random_animal(data: list) -> list:
+def add_random_animal(data: list) -> None:
     """ generate a random animal in the list of animals and send thad animal to one file txt. \n
     param data list\n
     """
@@ -94,7 +79,7 @@ def filter_data_by_animal_name(matrix_kind: list, name_to_search: str) -> list:
     return leaked_data
 
 
-def show_all_data_filter(lista_animals: list) -> list:
+def show_all_data_filter(lista_animals: list) -> None:
     """ show all the animals filter\n
     param lista_animals list     """
     for animal_information in lista_animals:
@@ -109,7 +94,7 @@ def show_all_data_filter(lista_animals: list) -> list:
         print(data_to_show)
 
 
-def search_all_animal_with_same_name(data: list) -> list:
+def search_all_animal_with_same_name(data: list) -> None:
     """ find and count animals \n
     param data list"""
     name_animal_to_search = validation.searching_animal_in_the_csv(data)
@@ -122,7 +107,7 @@ def search_all_animal_with_same_name(data: list) -> list:
 
 # these functions are for count all animals
 
-def have_count_of_animals(kind: list) -> list:
+def have_count_of_animals(kind: list) -> None:
     """count all animals\n
     param kind list"""
     count_all_animals = []
