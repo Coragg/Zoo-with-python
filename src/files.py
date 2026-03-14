@@ -2,7 +2,7 @@ import os
 
 
 def write_new_datum_to_the_file(path_and_name_file: str, name: str, weight: eval, color: str, 
-                                first_datum=None, second_datum=None):
+                                first_datum=None, second_datum=None) -> None:
     """ create or add data to a file with the path, name and extension of the file
     param path_and_name_file str
     param name str
@@ -23,7 +23,7 @@ def write_new_datum_to_the_file(path_and_name_file: str, name: str, weight: eval
         print(f"Error in the process to send data in {path_and_name_file}")
 
 
-def read_file_txt_and_show(path_file: str):
+def read_file_txt_and_show(path_file: str) -> None:
     """ Reading a file txt and show the data of the file. 
     param path_file: path and name of the file txt"""
     try:
@@ -34,7 +34,7 @@ def read_file_txt_and_show(path_file: str):
         print(f"The file in {path_file} is not found. ")
 
 
-def read_file_csv(the_path_of_file_and_name: str):
+def read_file_csv(the_path_of_file_and_name: str) -> None:
     """ Reading a file csv and return a list with the data of the file. 
     param path_file: path and name of the file csv
     return: list with the data of the file csv """
@@ -50,7 +50,7 @@ def read_file_csv(the_path_of_file_and_name: str):
         print(f"The file {the_path_of_file_and_name} is not found. ")
 
 
-def read_file_txt_and_have_matrix(the_path_of_file_and_name: str):
+def read_file_txt_and_have_matrix(the_path_of_file_and_name: str) -> None:
     """ Reading a file txt and return a list with the data of the file. 
     param path_file: path and name of the file csv
     return: list with the data of the file csv   """
